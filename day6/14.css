@@ -1,0 +1,15 @@
+.father {
+    width: 400px;
+    background-color: pink;
+  }
+
+  .son {
+    float: left;
+    width: 100px;
+    height: 400px;
+    background-color: blue;
+  }
+
+  .clear {
+    clear: both;
+  }
