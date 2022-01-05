@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <!-- 1、生成普通标签：标签选择器 div -->
+    <div></div>
+    <p></p>
+    
+    <!-- 2、生成div标签+类名：类选择器 .red -->
+    <div class="red"></div>
+    
+    <!-- 3、生成div标签+id属性：id选择器 ##one -->
+    <div id="one"></div>
+
+    <!-- 4、生成指定标签+类名+id属性：交集选择器 p.red#one -->
+    <p class="red" id="one"></p>
+
+    <!-- 5、生成儿子：子代选择器 ul>li -->
+    <ul>
+        <li></li>
+    </ul>
+    <div class="father red"></div>
+    
+    <!-- 6、生成内部文本：大括号 ul>li{我是li的内容} -->
+    <div>我是内容</div>
+    <ul>
+        <li>我也是内容</li>
+    </ul>
+
+    <!-- 7、同时创建多个：*个数 ul>li*5 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- ul>li{我是内容}*10 -->
+    <ul>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+        <li>我是内容</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-size: 36px;
+    }
+    .father >p{
+        color: red;
+    }
+</style>
+<body>
+    <!-- 需求：只让小红变红（不改变html结构） -->
+    <!-- 解决：在.father这个div的子代中找p标签 -->
+    <div class="father">
+        <p>小红</p>
+        <div>
+            <p>小小红</p>
+        </div>
+    </div>
+    <p>小黑</p>
+</body>
+</html>
