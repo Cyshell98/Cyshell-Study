@@ -17,48 +17,46 @@
       list-style: none;
     }
 
-    /* 3、找到li标签，设置浮动 */
-    ul li {
+    /* 3、找到li标签，设置浮动让li一行中显示 */
+    li{
       float: left;
     }
 
-    /* 4、找到a标签，设置宽高 */
+
     ul li a {
-      /* a标签默认是行内元素，不能直接设置宽高 */
-      /* 1、转换成行内块元素 */
-      /* display: inline-block; */
-
-      /* 2、转换成块级元素 */
-      /* display: block; */
-
-      /* 3、设置浮动 */
+    /* 4、找到a标签，设置宽高 → a标签默认是行内元素，默认不能设置宽高？？
+    方法1、转换成行内块元素：   给a标签设置 display:inline-block
+    方法2、转换成块级元素：   给a标签设置 display:block
+    方法3：设置浮动：  给a标签设置 float:left */
       float: left;
 
       width: 80px;
       height: 50px;
-      background-color: #ffc0cb;
-      text-decoration: none;
-      text-align: center;
       line-height: 50px;
-      color: #fff;
+      text-decoration: none;
+      background-color: #ffc0cb;
+      /* 谷歌浏览器默认为16px,可以省略 */
       font-size: 16px;
+      text-align: center;
+      color: #fff;
     }
-
-    ul li a:hover {
+    
+    ul li a:hover{
       background-color: #008000;
     }
+
   </style>
 </head>
 <body>
-  <ul>
-    <li><a href="#">新闻1</a></li>
-    <li><a href="#">新闻2</a></li>
-    <li><a href="#">新闻3</a></li>
-    <li><a href="#">新闻4</a></li>
-    <li><a href="#">新闻5</a></li>
-    <li><a href="#">新闻6</a></li>
-    <li><a href="#">新闻7</a></li>
-    <li><a href="#">新闻8</a></li>
-  </ul>
+<ul>
+  <li><a href="#">新闻1</a></li>
+  <li><a href="#">新闻2</a></li>
+  <li><a href="#">新闻3</a></li>
+  <li><a href="#">新闻4</a></li>
+  <li><a href="#">新闻5</a></li>
+  <li><a href="#">新闻6</a></li>
+  <li><a href="#">新闻7</a></li>
+  <li><a href="#">新闻8</a></li>
+</ul>
 </body>
 </html>

@@ -7,49 +7,41 @@
   <title>Document</title>
   <style>
     /* 去除掉标签默认的margin和padding */
-    * {
+    *{
       margin: 0;
       padding: 0;
     }
-    
-    .box {
+
+    .box{
       width: 1226px;
       height: 614px;
-      /* background-color: pink; */
-      margin: 100px auto;
+      margin: 0 auto;
     }
-
-    .left {
-      float: left;
+    .left{
       width: 234px;
       height: 614px;
       background-color: #800080;
+      float: left;
     }
-
-    .right {
-      float: right;
+    .right{
       width: 978px;
       height: 614px;
-      /* background-color: yellow; */
+      float: right;
     }
-
-    .item {
-      float: left;
+    .item{
       width: 234px;
       height: 300px;
+      float: left;
+      margin:0 14px 14px 0;
       background-color: #87ceeb;
-      margin-right: 14px;
-      margin-bottom: 14px;
     }
 
-    /* 找到的是 第 4 和第 8个 4倍数  4n */
-    .item:nth-child(4n) {
-      /* background-color: red; */
+    /* 找到第4个和第8个盒子 */
+    .item:nth-child(4n){
       margin-right: 0;
     }
-
-    /* 找到从第5个开始往后的所有个子元素 */
-    .item:nth-child(n+5) {
+    /* 找到后面5个盒子 */
+    .item:nth-child(n+5){
       margin-bottom: 0;
     }
   </style>
