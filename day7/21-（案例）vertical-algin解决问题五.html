@@ -7,31 +7,20 @@
   <title>Document</title>
   <style>
     .father {
-      width: 400px;
+      width: 600px;
+      height: 600px;
       background-color: pink;
+      line-height: 600px;
     }
 
-    .son {
-      float: left;
-      width: 100px;
-      height: 400px;
-      background-color: blue;
+    img {
+      vertical-align: middle;
     }
-
-    .clearfix::before,
-    .clearfix::after{
-      content: '';
-      display: table;
-    }
-    .clearfix::after{
-      clear: both;
-    }
-
   </style>
 </head>
 <body>
-  <div class="father clearfix">
-    <div class="son"></div>
+  <div class="father">
+    <img src="./images/1.jpg" alt="">
   </div>
 </body>
 </html>
