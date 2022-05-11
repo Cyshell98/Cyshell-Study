@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var n = Number(prompt('请输入一个数字'))
+
+        // if (n % 2 == 0) {
+        //     alert('你输入的数字是偶数')
+        // }
+        // else if (n % 2 == 1) {
+        //     alert('你输入的数字是奇数')
+        // }
+        // else {
+        //     alert('请输入数字！')
+        // }
+
+        var w = Number(prompt('请输入体重（千克）'));
+        var h = Number(prompt('请输入身高（米）'));
+        var BMI;
+        BMI = w / Math.pow(h, 2);
+        BMI = Math.floor(BMI * 1000) / 1000
+        // BMI=w/h/h
+
+        if (BMI < 18.5) {
+            alert('BMI为：' + BMI + ' 过瘦');
+        }
+        else if (BMI >= 18.5 && BMI < 24) {
+            alert('BMI为：' + BMI + ' 正常');
+        }
+        else if (BMI >= 24 && BMI < 28) {
+            alert('BMI为：' + BMI + ' 过胖');
+        }
+        else if (BMI >= 28 && BMI < 32) {
+            alert('BMI为：' + BMI + ' 肥胖');
+        }
+        else if (BMI > 32) {
+            alert('BMI为：' + BMI + ' 非常肥胖')
+        }
+
+
+    </script>
+</body>
+
+</html>

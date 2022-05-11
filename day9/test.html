@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var strs = [avbs, bced, catt, esze];
+        var strs = ["abcd", "bcef", "caed"];
+
+        // [a b c d]
+        // [b c e f]
+        // [c a e d]
+
+        // [a b c d b c e f c a e a]
+        var t = 0;
+        for (var i = 0; i < strs[0].length; i++) {
+            for (var j = 1; j < strs.length; j++) {
+                if (strs[j][i] < strs[j - 1][i]) {
+                    console.log(strs[j-1][i]+'---'+strs[j][i]);
+                    t++
+                    break
+                }
+            }
+        }
+
+        alert(t)
+
+
+        /**
+ * @param {string[]} A
+ * @return {number}
+ */
+var minDeletionSize = function (A) {
+  if (!A.length) return 0
+  let r = 0
+  for (let i = 0; i < A[0].length; i++) {
+    for (let j = 1; j < A.length; j++) {
+      if (A[j][i] < A[j - 1][i]) {
+        r++
+        break
+      }
+    }
+  }
+  return t
+};
+    </script>
+</body>
+
+</html>
