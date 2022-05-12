@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 粗糙写法：
+
+        // var sum = 0;
+        // for (let i = 2; i <= 100; i++) {
+        //     let n = 0;
+        //     for (let j = 2; j < i; j++) {
+        //         if (i % j == 0) {
+        //             n = n + 1;
+        //         }
+        //     }
+        //     if (n == 0) {
+        //         console.log(i);
+        //         sum += 1;
+        //     }
+        // }
+        // console.log('总共有：' + sum + '个质数！');
+
+        // 优化写法：
+
+        var sum = 0;
+        outer: for (let i = 2; i <= 100; i++) {
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    continue outer;
+                }
+            }
+            console.log(i)
+            sum += 1;
+        }
+        console.log('总共有：' + sum + '个质数！');
+
+
+    </script>
+</body>
+
+</html>
