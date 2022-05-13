@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+😛
+<script>
+    // 斐波那契数列：1、1、2、3、5、8、13、21
+    function fib(n) {
+        //递归出口
+        if (n == 0 || n == 1) return 1;
+        //
+        return fib(n - 1) + fib(n - 2)
+    }
+
+    //调用递归函数：
+    for (let i = 0; i < 8; i++) {
+        console.log(fib(i));
+    }
+
+</script>
 </body>
 </html>
