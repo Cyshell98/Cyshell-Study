@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <script>
-        console.log(a);
-        function fun() {
-            // fun()函数内定义，则a为局部变量
-            var a = 10;
+        function fun(){
+            // 函数中 如果不加var 可以定义变量但会变成全局变量，容易出错
+            a= 3;
         }
         fun();
         console.log(a);
     </script>
 </body>
-
-</html> 
+</html>
