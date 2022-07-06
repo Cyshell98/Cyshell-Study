@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">开始运动</button>
+    <button id="btn2">停止运动</button>
+    <div id="box"></div>
+</body>
+<script>
+    // 得到元素
+    var btn1 = document.getElementById('btn1');
+    var box = document.getElementById('box');
+
+    // 全局变量盒子的left值
+    let left = 100;
+    var timer;
+    // 按钮监听
+    btn1.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            left += 5;
+            if(left>=1000){
+                clearInterval(timer);
+            }
+            box.style.left = left + 'px';
+        }, 10);
+    };
+
+    btn2.onclick = function () {
+        clearInterval(timer);
+    };
+</script>
+
+</html>
