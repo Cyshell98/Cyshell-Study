@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">按我运动</button>
+    <div id="box"></div>
+</body>
+<script>
+    // 得到元素
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+
+    // 标识量，指示当前盒子在左边还是右边
+    var pos = 1; //1:左边    2:右边
+
+    // 函数节流锁
+    var lock = true;
+
+    // 事件监听
+    btn.onclick = function () {
+        // 首先检查锁是否打开了
+        if (!lock) {
+            alert('点击太快了！')
+            return;
+        }
+
+        // 把过渡加上
+        box.style.transition = 'all 1s linear 0s';
+        if (pos == 1) {
+            // 瞬间移动，但因为有过渡，所以为动画
+            box.style.left = '1000px';
+            pos = 2;
+        } else {
+            box.style.left = '100px'
+            pos = 1;
+        }
+
+        // 关锁
+        lock = false;
+
+        //定时自动开锁
+        setTimeout(() => {
+            lock = true;
+        }, 1000);
+    }
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * @param {string} s
+         * @return {number}
+         */
+
+        //  优化前：
+        // var lengthOfLongestSubstring = function (s) {
+        //     const n = s.length;
+        //     if (n <= 1) {return n;}
+
+        //     let left = 0, right = 0;
+        //     const window = new Set();
+        //     let maxLen = 0;
+        //     while (right < n) {
+        //         if (!window.has(s[right])) {
+        //             maxLen = Math.max(maxLen, right - left + 1)
+        //             window.add(s[right])
+        //             right++;
+        //         }
+        //         else {
+        //             window.delete(s[left])
+        //             left += maxLen;
+        //         }
+        //     }
+        //     return maxLen
+        // };
+
+        // 优化后：
+        // var lengthOfLongestSubstring = function (s) {
+        //     const n = s.length;
+        //     if (n <= 1) return n
+
+        //     let left = 0, right = 0;
+        //     const window = new Map();
+        //     let maxLen = 0;
+        //     while (right < n) {
+        //         const rightCharIndex = window.has(s[right]) ? window.get(s[right]) : -1;
+        //         left = Math.max(left, rightCharIndex);
+        //         maxLen = Math.max(maxLen, right - left + 1);
+        //         window.set(s[right]), right + 1;
+        //         right++
+        //     }
+        //     return maxLen
+        // };
+
+        // 有问题
+        // var lengthOfLongestSubstring = function(s) {
+        //     const n = s.length
+        //     if (n <= 1) return n
+
+        //     let left = 0, right = 0
+        //     const window = new Map()
+        //     let maxLen = 0
+        //     while (right < n) {
+        //         const rightCharIndex = window.has(s[right]) ? window.get(s[right]) : -1
+        //         left = Math.max(left, rightCharIndex)
+        //         maxLen = Math.max(maxLen, right - left + 1)
+        //         window.set(s[right], right + 1)
+        //         right++
+        //     }
+        //     return maxLen
+        // };
+
+        var lengthOfLongestSubstring = function (s) {
+            let res=[];
+            let maxLen = 0;
+            for(let str of s) {
+                while(res.includes(str)) {
+                    res.shift()
+                }
+                res.push(str)
+                maxLen = Math.max(maxLen,res.length)
+            }
+            return maxLen
+        };
+
+
+
+    </script>
+</body>
+
+</html>

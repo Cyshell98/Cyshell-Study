@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 穷举法，从1开始试验
+        // 寻找1~100中既可以被3整除，又可以被5整除的数字
+        // for(let i= 1;i<=100;i++){
+        //     if(i%3 == 0 &&i%5 ==0)
+        //     console.log(i);
+        // }
+
+        // // 用户输入一个数字，在控制台显示这个数字的全部约数
+        // var n = Number(prompt('请输入一个数字'));
+        // for (let i = 1; i <= n; i++) {
+        //     if (n % i == 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // 寻找水仙花数
+        var result = '水仙花数有：';
+
+        for (var i = 100; i < 1000; i++) {
+            //水仙花数要拆数位
+            //a,b,c分别代表百位，十位，个位
+            var i_str = i.toString();
+            var a = i_str.charAt(0);
+            var b = i_str.charAt(1);
+            var c = i_str.charAt(2);
+
+
+            // console.log(a, b, c);
+            if (Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3) == i) {
+                // console.log(i);
+                result = result + a + b + c + '、';
+            }
+            // else console.log('none');
+        }
+        result = result.substr(0, result.length - 1);
+        result = result + '。';
+        console.log(result);
+
+        alert(result)
+
+    </script>
+</body>
+
+</html>

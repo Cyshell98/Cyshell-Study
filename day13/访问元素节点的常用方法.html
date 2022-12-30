@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="firstLine">
+        <span>方法:</span>
+        <span>功能:</span>
+        <span>兼容性:</span>
+    </div>
+    <div>
+        <span>document.getElementById()</span>
+        <span>通过<b class="redSpan">id</b>得到元素</span>
+        <span>IE6</span>
+    </div>
+    <div>
+        <span>document.getElementsByTagName()</span>
+        <span>通过<b class="redSpan">标签名</b>得到元素数组</span>
+        <span>IE6</span>
+    </div>
+    <div>
+        <span>document.getElementsByClassName()</span>
+        <span>通过<b class="redSpan">类名</b>得到元素数组</span>
+        <span>IE9</span>
+    </div>
+    <div>
+        <span>document.querySelector()</span>
+        <span>通过<b class="redSpan">选择器</b>得到元素</span>
+        <span>IE8部分兼容、IE9完全兼容</span>
+    </div>
+    <div>
+        <span>document.querySelectorAll()</span>
+        <span>通过<b class="redSpan">选择器</b>得到元素数组</span>
+        <span>IE8部分兼容、IE9完全兼容</span>
+    </div>
+    <style>
+        #firstLine{
+            background-color: pink;
+            width: 70%;
+        }
+        #firstLine span{
+            font-weight: 600;
+            color: red;
+            text-align: center;
+            width: 29%;
+            display: inline-block;
+        }
+        .redSpan{
+            color: rgb(199, 85, 85);
+        }
+        div{
+            width: 100%;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        div span{
+            display: inline-block;
+            width: 25%;
+        }
+    </style>
+</body>
+</html>

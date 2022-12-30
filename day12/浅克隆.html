@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //准备原数组
+        var arr1= [33,44,11,22];
+    //准备一个结果数组
+        var result = [];
+        //遍历原数组，将遍历到的项都推入到结果数组中
+        for (let i = 0; i< arr1.length; i++) {
+            result.push(arr1[i]);
+        }
+
+        //测试是是否实现了克隆，就是说本质上是内存中的不同数组了
+        console.log(result);
+
+    </script>
+</body>
+</html>
