@@ -16,17 +16,21 @@
         border: 1px solid #000;
         margin: 50px auto;
         position: relative;
-        overflow: hidden;
+        /* overflow: hidden; */
       }
       .carousel ul {
         list-style: none;
-        width: 5000px;
-        position: relative;
-        left: 0px;
-        transition: left 1s ease 0s;
       }
       .carousel ul li {
-        float: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* 透明度都是0 */
+        opacity: 0;
+        transition: opacity 1s ease 0s;
+      }
+      .carousel ul li:first-child {
+        opacity: 1;
       }
       .carousel .leftbtn {
         position: absolute;
@@ -51,7 +55,7 @@
     </style>
   </head>
   <body>
-    <div class="carousel">
+    <div id="carousel" class="carousel">
       <ul id="list">
         <li><img src="./images/beijing/0.jpg" /></li>
         <li><img src="./images/beijing/1.jpg" /></li>
@@ -68,59 +72,40 @@
       var leftbtn = document.getElementById("leftbtn");
       var rightbtn = document.getElementById("rightbtn");
       var list = document.getElementById("list");
+      var lis = list.getElementsByTagName("li");
 
+      //当前显示第几张图
+      var idx = 0;
       //函数节流锁
       var lock = true;
-      //克隆第一张图片
-      var cloneli = list.firstElementChild.cloneNode(true);
-      list.appendChild(cloneli);
-      //当前ul的left值
-      var left = 0;
-
-      var idx = 0;
       //右边监听
       rightbtn.onclick = function () {
         if (!lock) return;
         lock = false;
-        //给list加过渡
-        list.style.transition = "left .5s ease 0s";
-
+        // 还没有改idx之前的图片就是老图，老图淡出
+        lis[idx].style.opacity = 0;
         idx++;
-        if (idx > 4) {
-          setTimeout(function () {
-            //取消过渡
-            list.style.transition = "none";
-            list.style.left = 0;
-            idx = 0;
-          }, 500);
-        }
-        list.style.left = -idx * 650 + "px";
-        console.log(idx);
-        setTimeout(() => {
+        if (idx > 4) idx = 0;
+        //改了idx之后的图片就是新图，新图淡入
+        lis[idx].style.opacity = 1;
+        setTimeout(function () {
           lock = true;
-        }, 500);
+        }, 1000);
       };
 
+      //左边监听
       leftbtn.onclick = function () {
         if (!lock) return;
         lock = false;
-        if (idx == 0) {
-          //取消过渡
-          list.style.transition = "none";
-          list.style.left = "-3250px";
-          //设置一个延时器，这个延时器时间为0，但可以实现过渡瞬间取消，然后再加上
-          setTimeout(function () {
-            list.style.transition = "left .5s ease 0s";
-            idx = 4;
-            list.style.left = -idx * 650 + "px";
-          }, 0);
-        } else {
-          idx--;
-          list.style.left = -idx * 650 + "px";
-        }
-        setTimeout(() => {
+        // 还没有改idx之前的图片就是老图，老图淡出
+        lis[idx].style.opacity = 0;
+        idx--;
+        if (idx < 0) idx = 4;
+        //改了idx之后的图片就是新图，新图淡入
+        lis[idx].style.opacity = 1;
+        setTimeout(function () {
           lock = true;
-        }, 500);
+        }, 1000);
       };
     </script>
   </body>
