@@ -1,39 +1,39 @@
 <template>
   <div class="app-container">
-    <h1>App 根组件</h1>
-
-    <button @click="flag = !flag">Toggle Flag</button>
-    <Test info="你好" v-if="flag"></Test>
-
+    <h1>App 根组件 --- {{ countFromSon }}</h1>
     <hr />
 
     <div class="box">
       <!-- 渲染 Left 组件和 Right 组件 -->
-      <!-- 以标签形式，使用注册好的组件 -->
-      <Left></Left>
-      <Right></Right>
+      <Left :msg="message" :user="userInfo"></Left>
+      <Right @numchange="getNewCount"></Right>
     </div>
   </div>
 </template>
 
 <script>
-// 导入需要使用的组件  .vue组件
 import Left from "@/components/Left.vue";
 import Right from "@/components/Right.vue";
-import Test from "@/components/Test.vue";
 
 export default {
-  components: {
-    Left: Left,
-    Right,
-    Test,
-  },
-
   data() {
     return {
-      flag: true,
+      message: "hello！",
+      userInfo: { name: "wsc", age: 18 },
+      //定义countFromSon
+      countFromSon: 0,
     };
   },
+  components: {
+    Left,
+    Right,
+  },
+
+  methods:{
+    getNewCount(val){
+      this.countFromSon = val;
+    }
+  }
 };
 </script>
 
